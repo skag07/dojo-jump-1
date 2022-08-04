@@ -3,7 +3,7 @@ pipeline{
 	agent any
 
 	environment {
-		DOCKERHUB_CREDENTIALS=credentials('chandra-dockerhub')
+		DOCKERHUB_CREDENTIALS=credentials('skag07')
 	}
 
 	stages {
@@ -11,7 +11,7 @@ pipeline{
 		stage('Build') {
 
 			steps {
-				sh 'docker build -t chandradeoarya/dojo-jump:latest .'
+				sh 'docker build -t skag07/dojo-jump:latest .'
 			}
 		}
 
@@ -25,7 +25,7 @@ pipeline{
 		stage('Push') {
 
 			steps {
-				sh 'docker push chandradeoarya/dojo-jump:latest'
+				sh 'docker push skag07/dojo-jump:latest'
 			}
 		}
 	}
